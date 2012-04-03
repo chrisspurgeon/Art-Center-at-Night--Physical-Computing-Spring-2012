@@ -17,19 +17,17 @@ int potValue;
 void setup() {
   pinMode(9, OUTPUT);
   pinMode(A0, INPUT); 
-//  Serial.begin(9600); 
+  Serial.begin(9600); 
 }
 
 void loop() {
   potValue = analogRead(A0);
-//  Serial.print(potValue);
-  potValue = map(potValue,0,1023,1,255);
-//  Serial.print("  ");
-//  Serial.println(potValue);
+ // potValue = map(potValue,0,1023,1,255);
   digitalWrite(9,HIGH);
   delayMicroseconds(potValue);
   digitalWrite(9,LOW);
   delayMicroseconds(potValue);
+  Serial.println("hi");
 }
 
 
